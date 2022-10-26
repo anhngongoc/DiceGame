@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game cua Ngoc Anh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="dice.css" />
+</head>
+<body>
+    <div>
+        <button id="start">Start</button>
+    </div>
+    <div class="container">
+        <div class="cube" id="cube">
+            <div class="front">
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="back">
+                <pre class="firstPre"><span class="fa fa-circle"></span>    <span class="fa fa-circle"></span>    <span class="fa fa-circle"></span></pre>
+                <pre class="secondPre"><span class="fa fa-circle"></span>    <span class="fa fa-circle"></span>    <span class="fa fa-circle"></span></pre>
+            </div>
+            <div class="top">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="left">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="right">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="bottom">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cube" id="cube2">
+            <div class="front">
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="back">
+                <pre class="firstPre"><span class="fa fa-circle"></span>    <span class="fa fa-circle"></span>    <span class="fa fa-circle"></span></pre>
+                <pre class="secondPre"><span class="fa fa-circle"></span>    <span class="fa fa-circle"></span>    <span class="fa fa-circle"></span></pre>
+            </div>
+            <div class="top">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="left">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="right">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="bottom">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cube" id="cube3">
+            <div class="front">
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="back">
+                <pre class="firstPre"><span class="fa fa-circle"></span>    <span class="fa fa-circle"></span>    <span class="fa fa-circle"></span></pre>
+                <pre class="secondPre"><span class="fa fa-circle"></span>    <span class="fa fa-circle"></span>    <span class="fa fa-circle"></span></pre>
+            </div>
+            <div class="top">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="left">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="right">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+            <div class="bottom">
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+                <span class="fa fa-circle"></span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let start = document.getElementById('start');
+        let cube = document.getElementById('cube');
+        let cube2 = document.getElementById('cube2');
+        let cube3 = document.getElementById('cube3');
+        var cubeNum = 0;
+        var cubeNum2 = 0;
+        var cubeNum3 = 0;
+
+        angleArray = [[0,0,0],[-310,-362,-38],[-400,-320,-2],[135,-217,-88],[-224,-317,5],[-47,-219,-81],[-133,-360,-53]];
+
+        start.addEventListener('click', function(e){
+            cube.style.animation = 'animate 1s linear';
+            const randomAngle = Math.floor(Math.random() * 6) + 1;
+            cubeNum = randomAngle;
+            cube.style.transform = 'rotateX('+angleArray[randomAngle][0]+'deg) rotateY('+angleArray[randomAngle][1]+'deg) rotateZ('+angleArray[randomAngle][2]+'deg)';
+            cube.style.transition = '1s linear';
+
+            cube.addEventListener('animationend', function(e){
+                cube.style.animation = '';
+            });
+
+            cube2.style.animation = 'animate 1s linear';
+            const randomAngle2 = Math.floor(Math.random() * 6) + 1;
+            cubeNum2 = randomAngle2;
+            cube2.style.transform = 'rotateX('+angleArray[randomAngle2][0]+'deg) rotateY('+angleArray[randomAngle2][1]+'deg) rotateZ('+angleArray[randomAngle2][2]+'deg)';
+            cube2.style.transition = '1s linear';
+
+            cube2.addEventListener('animationend', function(e){
+                cube2.style.animation = '';
+            });
+
+            cube3.style.animation = 'animate 1s linear';
+            const randomAngle3 = Math.floor(Math.random() * 6) + 1;
+            cubeNum3 = randomAngle3;
+            cube3.style.transform = 'rotateX('+angleArray[randomAngle3][0]+'deg) rotateY('+angleArray[randomAngle3][1]+'deg) rotateZ('+angleArray[randomAngle3][2]+'deg)';
+            cube3.style.transition = '1s linear';
+
+            cube3.addEventListener('animationend', function(e){
+                cube3.style.animation = '';
+            });
+
+            console.log(cubeNum,cubeNum2,cubeNum3);
+            var totalNum = cubeNum + cubeNum2 + cubeNum3;
+            console.log(totalNum);
+        });
+
+        cube.addEventListener('click', function(e){
+            cube.style.animation = 'animate 1s linear';
+            const randomAngle = Math.floor(Math.random() * 6) + 1;
+            cubeNum = randomAngle;
+            cube.style.transform = 'rotateX('+angleArray[randomAngle][0]+'deg) rotateY('+angleArray[randomAngle][1]+'deg) rotateZ('+angleArray[randomAngle][2]+'deg)';
+            cube.style.transition = '1s linear';
+
+            cube.addEventListener('animationend', function(e){
+                cube.style.animation = '';
+            });
+        });
+
+        cube2.addEventListener('click', function(e){
+            cube2.style.animation = 'animate 1s linear';
+            const randomAngle = Math.floor(Math.random() * 6) + 1;
+            cubeNum2 = randomAngle;
+            cube2.style.transform = 'rotateX('+angleArray[randomAngle][0]+'deg) rotateY('+angleArray[randomAngle][1]+'deg) rotateZ('+angleArray[randomAngle][2]+'deg)';
+            cube2.style.transition = '1s linear';
+
+            cube2.addEventListener('animationend', function(e){
+                cube2.style.animation = '';
+            });
+        });
+
+        cube3.addEventListener('click', function(e){
+            cube3.style.animation = 'animate 1s linear';
+            const randomAngle = Math.floor(Math.random() * 6) + 1;
+            cubeNum3 = randomAngle;
+            cube3.style.transform = 'rotateX('+angleArray[randomAngle][0]+'deg) rotateY('+angleArray[randomAngle][1]+'deg) rotateZ('+angleArray[randomAngle][2]+'deg)';
+            cube3.style.transition = '1s linear';
+
+            cube3.addEventListener('animationend', function(e){
+                cube3.style.animation = '';
+            });
+        });
+
+        
+    </script>
+</body>
+</html>
